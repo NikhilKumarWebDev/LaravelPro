@@ -17,9 +17,11 @@
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 
-<body>
 
-@yield('content')
+<body>
+    
+
+
     <div id="app">
     
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
@@ -79,5 +81,6 @@
         
         
     </div>
+    @yield('content')
 </body>
 </html>
