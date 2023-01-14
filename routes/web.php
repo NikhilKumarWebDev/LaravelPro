@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Index;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,14 +22,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/home/add', [ProductController::class, 'index'])->name('addproduct');
 // Route::get('/', function () {
 //     return view('reload');
 // });
 // Route::view('/','insert');
 
-Route::post('/home/add',[Index::class ,'insert'])->name('home.add');
+Route::post('/home/add',[ProductController::class ,'insert'])->name('home.add');
 
 Route::view('update','updateview');
-Route::get('updatedelete',[Index::class ,'updateordelete']);
-Route::get('updateData',[Index::class ,'update']);
+Route::get('updatedelete',[ProductController::class ,'updateordelete']);
+Route::get('updateData',[ProductController::class ,'update']);
+Route::get('/add', function () {
+    
+    return view('add');
+});
+
 
